@@ -1,0 +1,1 @@
+window.ship = "lortec-lidfen-sorpes-ranrep"

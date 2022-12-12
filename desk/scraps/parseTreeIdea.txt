@@ -1,0 +1,26 @@
+build layer by layer
+
+breadth first search saving layers
+build from bottom up
+
+PROBLEM:  Derivation list is in depth first order
+SOLUTION: Store jar from layer-id to nodes
+          Expand rules depth first, keeping track of depth and adding to jar
+
+1) initialize queue with start (%expr) and add it to the list of layers
+
+2)
+in a loop
+pop current layer: - adding productions of non-terminals to the queue
+                   - adding either the non-terminal and it's rule or the terminal to the new layer
+add new layer to list of layers
+end loop
+
+3) initialize next-layer with leaves made from the bottom layer
+
+4)
+in a loop over the rest of the layers
+replace next-layer with nodes for the current layer; terminals are leaves, non-terminals take their kids from next-layer
+
+5) return the one node in the list
+
